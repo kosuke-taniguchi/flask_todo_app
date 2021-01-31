@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if current_user.is_authenticated %}
+<a href="{{ url_for('app.todohome') }}">Todo Appホーム画面へ</a>
+{% else %}
+ログインしてください
+{% endif %}
+{% endblock content %}

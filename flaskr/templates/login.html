@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% from '_formhelpers.html' import render_field %}
+
+{% block content %}
+<!-- <body class="text-center">
+<h1 class="h3 mb-3 font-weight-normal">ログインしてください</h1>
+<label for="inputEmail" class="sr-only">{{ render_field(form.email) }}</label>
+<input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+<label for="inputPassword" class="sr-only">{{ render_field(form.password) }}</label>
+<input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+<button class="btn btn-lg btn-primary btn-block" type="submit">ログイン</button>
+<p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+</form>
+</body> -->
+
+{% for message in get_flashed_messages() %}
+<div class="alert alert-danger" role="alert">
+  {{ message }}
+</div>
+{% endfor %}
+<form method="POST">
+  {{ form.csrf_token }}
+  {{ render_field(form.email) }}
+  {{ render_field(form.password) }}
+  {{ form.submit() }}
+</form>
+{% endblock content %}

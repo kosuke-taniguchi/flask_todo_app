@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% from "_formhelpers.html" import render_field %}
+
+{% block content %}
+<form method='POST'>
+  <dl>
+    {{ form.csrf_token }}
+    {{ render_field(form.title, value=post.title) }}
+    {{ render_field(form.content, value=post.content) }}
+    {{ render_field(form.due_date)}}
+    {{ form.submit() }}
+  </dl>
+</form>
+{% endblock content %}
