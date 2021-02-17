@@ -10,9 +10,9 @@
 {% for post in posts %}
   <div class="card" style="width: 30rem; margin:12px auto;">
     <div class="card-body">
-      <h5 class="card-title">{{ post.title }}</h5>
-      <p class="card-text">{{ post.content }}</p>
-      <p class="card-text">{{ post.due_date }}</p>
+      <h5 class="card-title">タイトル: {{ post.title }}</h5>
+      <p class="card-text">やること: {{ post.content }}</p>
+      <p class="card-text">期日: {{ post.due_date }}</p>
       <a href="{{ url_for('app.update', post_id=post.id) }}" class="card-link">編集</a>
       <a href="{{ url_for('app.delete', post_id=post.id) }}" class="card-link">削除</a>
       <!-- <a href="#" class="card-link">Another link</a> -->

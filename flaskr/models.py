@@ -42,7 +42,6 @@ class Post(db.Model):
     __tabelname__ = 'posts'
 
     id = db.Column(db.Integer, primary_key=True)
-    # date = db.Column(db.Text())
     title = db.Column(db.String(40))
     content = db.Column(db.Text)
     due_date = db.Column(db.Integer)
